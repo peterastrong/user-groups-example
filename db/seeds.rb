@@ -1,3 +1,6 @@
+User.destroy_all
+Group.destroy_all
+UserGroup.destroy_all
 Group.create!([
   {name: "actualize"}
 ])
@@ -14,21 +17,21 @@ User.create!([
   {name: "Peter", email: nil}
 ])
 UserGroup.create!([
-  {user_id: 1, group_id: 1, role: "admin"}
+  {user_id: User.first.id, group_id: Group.first.id, role: "admin"}
 ])
 UserGroup.create!([
-  {user_id: 1, group_id: 2, role: "editor"}
+  {user_id: User.first.id, group_id: Group.second.id, role: "editor"}
 ])
 UserGroup.create!([
-  {user_id: 1, group_id: 3, role: "member"}
+  {user_id: User.first.id, group_id: Group.last.id, role: "member"}
 ])
 UserGroup.create!([
-  {user_id: 2, group_id: 3, role: "admin"}
+  {user_id: User.second.id, group_id: Group.last.id, role: "admin"}
 ])
 UserGroup.create!([
-  {user_id: 2, group_id: 1, role: "editor"}
+  {user_id: User.second.id, group_id: Group.first.id, role: "editor"}
 ])
 UserGroup.create!([
-  {user_id: 2, group_id: 2, role: "member"}
+  {user_id: User.second.id, group_id: Group.second.id, role: "member"}
 ])
 # important note: with enums, although role is an integer, you can just put in the word "admin" or whatever as a string and it will save to the database. That way you don't need to remember which integer is assigned to each role.
