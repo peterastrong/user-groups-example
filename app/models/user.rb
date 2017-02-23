@@ -13,7 +13,6 @@ class User < ApplicationRecord
     user_groups.find_by(group_id: group_id).admin?
   end
 
-
   def editor?(group_id)
     user_groups.find_by(group_id: group_id).editor?
   end
@@ -21,4 +20,6 @@ class User < ApplicationRecord
   def member?(group_id)
     user_groups.find_by(group_id: group_id).member?
   end
+
+  # note i didn't make the `admin?` methods in the user group model. This is the power of enums. It makes these for you! Although we kind of have to hack around it to be able to call it on the user model.
 end

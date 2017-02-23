@@ -58,4 +58,5 @@ UserGroup.create!([
 UserGroup.create!([
   {user_id: User.last.id, group_id: Group.first.id, role: "member"}
 ])
-# important note: with enums, although role is an integer, you can just put in the word "admin" or whatever as a string and it will save to the database. That way you don't need to remember which integer is assigned to each role.
+
+# Important note: with enums, although role is an integer, you can just put in the word "admin" or whatever as a string and it will save to the database. That way you don't need to remember which integer is assigned to each role.
