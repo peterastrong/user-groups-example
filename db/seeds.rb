@@ -19,6 +19,9 @@ User.create!([
 User.create!([
   {name: "Andy", email: nil}
 ])
+User.create!([
+  {name: "Kenny", email: nil}
+])
 UserGroup.create!([
   {user_id: User.first.id, group_id: Group.first.id, role: "admin"}
 ])
@@ -36,6 +39,15 @@ UserGroup.create!([
 ])
 UserGroup.create!([
   {user_id: User.second.id, group_id: Group.second.id, role: "member"}
+])
+UserGroup.create!([
+  {user_id: User.third.id, group_id: Group.second.id, role: "admin"}
+])
+UserGroup.create!([
+  {user_id: User.third.id, group_id: Group.last.id, role: "editor"}
+])
+UserGroup.create!([
+  {user_id: User.third.id, group_id: Group.first.id, role: "member"}
 ])
 UserGroup.create!([
   {user_id: User.last.id, group_id: Group.second.id, role: "admin"}

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   # if this is confusing, you can rename the methods to be more explicit
   # i.e. `def admin_of_group?(group_id)`
+
+  # each method will return true/false
   
   def admin?(group_id)
     user_groups.find_by(group_id: group_id).admin?
